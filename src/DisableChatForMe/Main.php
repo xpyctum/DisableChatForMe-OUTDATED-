@@ -40,6 +40,7 @@ class DisableChat extends PluginBase implements Listener{
         $this->players[] = $player->getName();
     }
 
+    
     public function onChat(PlayerChatEvent $event){
         if($event->getPlayer() instanceof Player){
             foreach($this->getServer()->getOnlinePlayers() as $player){
