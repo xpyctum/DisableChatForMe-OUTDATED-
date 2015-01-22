@@ -57,8 +57,8 @@ class DisableChatForMe extends PluginBase implements Listener{
 
     public function onChat(PlayerChatEvent $event){
         if($event->getPlayer() instanceof Player){
+            $this->getLogger()->notice($event->getMessage());
             foreach($this->getServer()->getOnlinePlayers() as $player){
-                $this->getLogger()->notice($event->getMessage());
                 if($this->ischatoff($player)){
                     //nothing :+1:
                 }else{
