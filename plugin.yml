@@ -1,0 +1,13 @@
+name: DisableChatForMe
+main: DisableChatForMe\Main
+version: 1.0
+author: xpyctum
+api: [1.9.0]
+load: POSTWORLD
+commands:
+ chaton:
+  description: "Player can see chat"
+  permission: dcfm.chaton
+ chatoff:
+  description: "Player can't see chat"
+  permission: dcfm.chatoff
