@@ -1,5 +1,5 @@
 name: DisableChatForMe
-main: DisableChatForMe\Main
+main: DisableChatForMe\DisableChatForMe
 version: 1.0
 author: xpyctum
 api: [1.9.0]
