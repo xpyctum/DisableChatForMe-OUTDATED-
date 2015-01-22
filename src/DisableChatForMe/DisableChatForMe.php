@@ -12,7 +12,7 @@ use pocketmine\plugin\PluginBase;
 
 class DisableChatForMe extends PluginBase implements Listener{
 
-    private $players = array();
+    private $players = [];
 
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
