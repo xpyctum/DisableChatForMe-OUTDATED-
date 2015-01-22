@@ -32,12 +32,12 @@ class DisableChatForMe extends PluginBase implements Listener{
         switch($command->getName()){
             case "chaton":{
                 $this->chaton($sender);
-                $sender->sendMessage("[DisableChat] You successfully disabled chat for yourself");
+                $sender->sendMessage("[DisableChat] You successfully enabled chat for yourself");
                 break;
             }
             case "chatoff":{
                 $this->chatoff($sender);
-                $sender->sendMessage("[DisableChat] You successfully enabled chat for yourself");
+                $sender->sendMessage("[DisableChat] You successfully disabled chat for yourself");
                 break;
             }
         }
