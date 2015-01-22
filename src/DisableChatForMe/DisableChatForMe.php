@@ -12,7 +12,7 @@ use pocketmine\plugin\PluginBase;
 
 class DisableChatForMe extends PluginBase implements Listener{
 
-    private $players = [];
+    private $players = array();
 
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
@@ -44,7 +44,7 @@ class DisableChatForMe extends PluginBase implements Listener{
     }
 
     public function ischatoff(Player $player){
-        return in_array($player->getName(), $this->players);
+        return isset($this->players[$player->getName()]);
     }
 
     public function chaton(Player $player){
@@ -58,8 +58,9 @@ class DisableChatForMe extends PluginBase implements Listener{
     public function onChat(PlayerChatEvent $event){
         if($event->getPlayer() instanceof Player){
             foreach($this->getServer()->getOnlinePlayers() as $player){
+                $this->getLogger()->notice($event->getMessage());
                 if($this->ischatoff($player)){
-                    $this->getLogger()->debug($event->getMessage());
+                    //nothing :+1:
                 }else{
                     $message = $event->getMessage();
                     $user = $event->getPlayer()->getDisplayName();

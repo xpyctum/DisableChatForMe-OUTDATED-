@@ -1,6 +1,6 @@
 name: DisableChatForMe
 main: DisableChatForMe\DisableChatForMe
-version: 1.0
+version: 1.0.3
 author: xpyctum
 api: [1.9.0]
 load: POSTWORLD
