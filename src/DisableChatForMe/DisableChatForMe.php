@@ -49,16 +49,18 @@ class DisableChatForMe extends PluginBase implements Listener{
 
     public function chaton(Player $player){
         unset($this->players[$player->getName()]);
+        $player->setNameTag($player->getDisplayName());
     }
 
     public function chatoff(Player $player){
         $this->players[] = $player->getName();
+        $player->setNameTag($player->getDisplayName()." [MUTE]");
     }
 
     public function onChat(PlayerChatEvent $event){
         if($event->getPlayer() instanceof Player){
             if(!$event->isCancelled()){
-            $this->getLogger()->notice($event->getMessage());
+            $this->getLogger()->info($event->getPlayer()->getDisplayName()." Message: ".$event->getMessage());
             foreach($this->getServer()->getOnlinePlayers() as $player){
                 if($this->ischatoff($player)){
                     //nothing :+1:
