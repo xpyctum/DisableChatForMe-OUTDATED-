@@ -5,4 +5,4 @@ Ex:
 ![Player2 with disabled chat!](http://pp.vk.me/c621526/v621526517/bf3f/XhuDMgYZEfU.jpg)
 Tasks:
 - [x] Core plugin
-- [ ] Fix /chaton
+- [x] Fix /chaton
