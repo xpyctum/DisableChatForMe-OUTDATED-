@@ -53,7 +53,7 @@ class DisableChatForMe extends PluginBase implements Listener{
     }
 
     public function chatoff(Player $player){
-        $this->players[] = $player->getName();
+        $this->players[$player->getName()] = $player->getName();
         $player->setNameTag($player->getDisplayName()." [MUTE]");
     }
 
