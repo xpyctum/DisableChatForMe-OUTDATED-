@@ -16,9 +16,13 @@ class DisableChatForMe extends PluginBase implements Listener{
 
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
+        $this->getLogger()->info("[DisableChatForMe] Successfully enabled!");
     }
 
-    public function onDisable(){}
+    public function onDisable(){
+        unset($this->players[]);
+        $this->getLogger()->info("[DisableChatForMe] Successfully disabled!");
+    }
 
     /**
      * @param CommandSender $sender
