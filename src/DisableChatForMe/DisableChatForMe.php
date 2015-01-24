@@ -20,7 +20,7 @@ class DisableChatForMe extends PluginBase implements Listener{
     }
 
     public function onDisable(){
-        unset($this->players[]);
+        unset($this->players);
         $this->getLogger()->info("[DisableChatForMe] Successfully disabled!");
     }
 
