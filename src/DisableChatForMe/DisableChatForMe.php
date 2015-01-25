@@ -74,7 +74,9 @@ class DisableChatForMe extends PluginBase implements Listener{
                     $player->sendMessage("<".$user."> ".$message);
                 }
             }
-            $event->setCancelled(true);
+            $event->setCancelled();
+            }else{
+                $event->setCancelled();
             }
         }
     }
