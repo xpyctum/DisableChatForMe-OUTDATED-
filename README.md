@@ -6,3 +6,4 @@ Ex:
 Tasks:
 - [x] Core plugin
 - [x] Fix /chaton
+- [ ] Custom chat-format
