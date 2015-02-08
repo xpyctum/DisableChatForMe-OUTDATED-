@@ -62,20 +62,20 @@ class DisableChatForMe extends PluginBase implements Listener{
     }
 
     public function onChat(PlayerChatEvent $event){
-        if($event->getPlayer() instanceof Player){
+        $player = $event->getPlayer();
+        if($player instanceof Player){
             if(!$event->isCancelled()){
-            $this->getLogger()->info("<".$event->getPlayer()->getDisplayName()."> ".$event->getMessage());
-            foreach($this->getServer()->getOnlinePlayers() as $player){
-                if($this->ischatoff($player)){
-                    //nothing :+1:
-                }else{
-                    $message = $event->getMessage();
-                    $user = $event->getPlayer()->getDisplayName();
-                    $player->sendMessage("<".$user."> ".$message);
+                $user = $player->getName();
+                $message = $event->getMessage();
+                $format = "<".$user."> ".$message;
+                $this->getLogger()->info($format);
+                foreach($this->getServer()->getOnlinePlayers() as $p){
+                    if($this->ischatoff($p)){
+                        //nothing :+1:
+                    }else{
+                        $p->sendMessage($format);
+                    }
                 }
-            }
-            $event->setCancelled();
-            }else{
                 $event->setCancelled();
             }
         }
