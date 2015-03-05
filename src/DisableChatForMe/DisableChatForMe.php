@@ -70,9 +70,7 @@ class DisableChatForMe extends PluginBase implements Listener{
                 $format = "<".$user."> ".$message;
                 $this->getLogger()->info($format);
                 foreach($this->getServer()->getOnlinePlayers() as $p){
-                    if($this->ischatoff($p)){
-                        //nothing :+1:
-                    }else{
+                    if(!($this->ischatoff($p))){
                         $p->sendMessage($format);
                     }
                 }
